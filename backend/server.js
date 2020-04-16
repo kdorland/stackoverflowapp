@@ -87,10 +87,10 @@ questionRoutes.route("/add").post(function(req, res) {
   question
     .save()
     .then(question => {
-      res.status(200).json({ question: "question added successfully" });
+      res.status(200).json({ question: "Your question was added successfully" });
     })
     .catch(err => {
-      res.status(400).send("adding new question failed");
+      res.status(400).send("Sorry, please try again. The upload of your question failed");
     });
 });
 
@@ -99,10 +99,10 @@ answerRoutes.route("/addAnswers").post(function(req, res) {
   answers
     .save()
     .then(answers => {
-      res.status(200).json({ answers: "Answers added successfully" });
+      res.status(200).json({ answers: "Your answer was added successfully" });
     })
     .catch(err => {
-      res.status(400).send("adding new answers failed");
+      res.status(400).send("Sorry, please try again. The upload of your answer failed");
     });
 });
 
