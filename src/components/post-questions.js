@@ -73,8 +73,8 @@ class PostQuestion extends Component {
       <div style={{ marginTop: 0 }}>
       <div className="jumbotron jumbotron-fluid">
   <div className="container">
-    <h1 className="display-4">You have a problem? </h1>
-    <p className="lead">Ask your question at the below form, our experts will he happy to help</p>
+    <h1 className="display-4">Stackoverflow</h1>
+    <p className="lead">This is an exmaple of a clone for the popular website Stackoverflow. Please ask your question down below:</p>
   </div>
 </div>
         <div className="form-group">
@@ -87,7 +87,7 @@ class PostQuestion extends Component {
           />
         </div>
         <div className="form-group">
-          <label>What is your question title: </label>
+          <label>What is the topic about:</label>
           <input
             type="text"
             className="form-control"
