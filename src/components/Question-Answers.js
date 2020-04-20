@@ -43,7 +43,8 @@ class QuestionLink extends Component {
     this.setState({ text: e.target.value });
   }
   handleRating(e) {
-    this.setState({ rating: e.target.value });
+    this.setState({ rating: e.target.value,
+      upvote : e.target.upvote });
   }
 
   onSubmit(e) {
@@ -98,17 +99,18 @@ class QuestionLink extends Component {
   }
 
   ratingbtn() {
+    if (this.state.rating = onclick) {
+      return +1;
+    }
     return (
       <div className="Rating">
-        <input
-          type="range"
-          min={0}
-          max={5}
+        <button
+          type="button"
           value={this.state.rating}
           onChange={this.handleRating}
         />
         <br />
-        <Rating rating={this.state.rating} maxRating={5} />
+        <Rating rating={this.state.rating}/>
       </div>
     );
   }

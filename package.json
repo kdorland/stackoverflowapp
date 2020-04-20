@@ -5,11 +5,12 @@
   "dependencies": {
     "axios": "^0.18.1",
     "bootstrap": "^4.3.1",
+    "cors": "^2.8.5",
     "eslint-config": "^0.3.0",
     "react": "^16.8.6",
     "react-dom": "^16.13.1",
     "react-router-dom": "^5.0.0",
-    "react-scripts": "^2.1.8",
+    "react-scripts": "^3.4.1",
     "react-search-field": "^1.0.0",
     "semantic-ui-react": "^0.86.0"
   },
@@ -29,6 +30,6 @@
     "not op_mini all"
   ],
   "devDependencies": {
-    "nodemon": "^1.18.11"
+    "nodemon": "^2.0.3"
   }
 }
