@@ -36,7 +36,7 @@ class App extends Component {
           <img class="image" src="https://res.cloudinary.com/dedpxe9qh/image/upload/v1587370289/stackoverflow-header_vnsdgy.png" alt="stackoverflow-header" border="0"/>
           <br />
           <Switch>
-            <Route path="/home" component={Home}/>
+            <Route path="/home/" component={Home}/>
             <Route path="/post/" component={PostQuestion} />
             <Route path="/Questions/" component={QuestionList} />
             <Route
