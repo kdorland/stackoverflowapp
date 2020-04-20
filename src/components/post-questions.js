@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
+import "./style.css";
 
 class PostQuestion extends Component {
   /*  First we start by adding a constructor to the component class.
@@ -70,13 +71,12 @@ class PostQuestion extends Component {
   }
   render() {
     return (
-      <div style={{ marginTop: 0 }}>
-      <div className="jumbotron jumbotron-fluid">
   <div className="container">
-    <h1 className="display-4">Stackoverflow</h1>
-    <p className="lead">This is an exmaple of a clone for the popular website Stackoverflow. Please ask your question down below:</p>
-  </div>
-</div>
+    <br></br>
+    <h3 class="h3" align="center">Stackoverflow</h3>
+    <p className="slogan" align="center">This is an exmaple of a clone for the popular website Stackoverflow. Please ask your question down below:</p>
+
+
         <div className="form-group">
           <label>What is your name: </label>
           <input
@@ -112,9 +112,12 @@ class PostQuestion extends Component {
               className="btn btn-primary"
             />
           </div>
-        </form>   
+        </form>
+        <h3 class="h3" align="center" >Questions are everywhere, answers are on StackOverflow</h3>
+        <img className="answer"
+             src="https://res.cloudinary.com/dedpxe9qh/image/upload/v1587371957/Screenshot_2020-04-20_at_10.39.04_lykm2m.png"
+             alt="answer" border="0"/>
       </div>
-      
 
     );
   }

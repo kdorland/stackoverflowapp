@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import ReactDOM from "react-dom";
 import axios from "axios";
 import { Rating } from "semantic-ui-react";
 
@@ -7,7 +8,14 @@ const Answers = props => (
     <td>{props.answers.author}</td>
     <td>{props.answers.text}</td>
     <td>{props.answers.rating}</td>
+    <td><h6>1</h6></td>
+    <td><button id="upvote">Upvote</button></td>
+    <td><button id="downvote">Downvote</button></td>
   </tr>
+
+    //onClick={this.increment} and decrement onClick for buttons
+//function increment(){ this.setState({score: this.state.score + 1,});}
+//function decrement(){this.setState({score: this.state.score - 1,});}
 );
 
 class QuestionLink extends Component {
@@ -26,6 +34,7 @@ class QuestionLink extends Component {
     this.handleTextChange = this.handleTextChange.bind(this);
     this.handleRating = this.handleRating.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
+
   }
   handleAuthorChange(e) {
     this.setState({ author: e.target.value });
@@ -87,6 +96,7 @@ class QuestionLink extends Component {
         return <Answers answers={currentAnswers} key={i} />;
       });
   }
+
   ratingbtn() {
     return (
       <div className="Rating">
@@ -108,11 +118,11 @@ class QuestionLink extends Component {
       <div className="container">
         <div className="row">
           <div className="jumbotron col-12">
-            {this.ratingbtn()}
-            <h1 className="display-3">
-              {this.state.currentQuestion.author_name}
-            </h1>
-            <p className="lead">{this.state.currentQuestion.question_input}</p>
+
+            <h4 className="display-5">
+              {this.state.currentQuestion.question_input}
+            </h4>
+            <p className="lead">{this.state.currentQuestion.author_name}</p>
             <hr className="my-4" />
             <div className="form-group">
               <label>Name: </label>
@@ -147,7 +157,7 @@ class QuestionLink extends Component {
                 <tr>
                   <th>Name</th>
                   <th>Answer</th>
-                  <th>Rate{this.ratingbtn()}</th>
+                  <th>Rating</th>
                 </tr>
               </thead>
               <tbody>{this.AnswersList()}</tbody>

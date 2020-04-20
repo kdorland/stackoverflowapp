@@ -16,7 +16,7 @@ let answer = require("./answer.model");
 app.use(cors());
 app.use(bodyParser.json());
 
-mongoose.connect("db", {
+mongoose.connect("mongodb+srv://dezheaaa:test1234@clusterstackoverflow-uuz7k.azure.mongodb.net/test?retryWrites=true&w=majority", {
   useNewUrlParser: true
 });
 const connection = mongoose.connection;

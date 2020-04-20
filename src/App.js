@@ -27,6 +27,7 @@ class App extends Component {
               </ul>
             </div>
           </nav>
+          <img class="image" src="https://res.cloudinary.com/dedpxe9qh/image/upload/v1587370289/stackoverflow-header_vnsdgy.png" alt="stackoverflow-header" border="0"/>
           <br />
           <Switch>
             <Route path="/post/" component={PostQuestion} />
@@ -38,6 +39,7 @@ class App extends Component {
           </Switch>
         </div>
       </Router>
+
     );
   }
 }

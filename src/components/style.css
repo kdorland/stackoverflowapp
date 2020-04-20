@@ -1,0 +1,15 @@
+.h3{
+    font-family: Times New Roman, Times, serif;
+    font-weight: bold;
+}
+
+.answer{
+    max-width: 100%;
+    height: auto;
+}
+
+.question {
+    max-width: 50%;
+    height: auto;
+    position: relative;
+}
