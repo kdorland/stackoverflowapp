@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import "./style.css";
+import { ToastProvider, useToasts } from 'react-toast-notifications'
 
 class PostQuestion extends Component {
   /*  First we start by adding a constructor to the component class.
@@ -58,6 +59,7 @@ class PostQuestion extends Component {
       question_title: this.state.question_title,
       question_input: this.state.question_input
     };
+
 
     axios
       .post("http://localhost:4000/questions/add", newQuestion)

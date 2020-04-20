@@ -3,17 +3,19 @@ import ReactDOM from "react-dom";
 import axios from "axios";
 import { Rating } from "semantic-ui-react";
 
+
 const Answers = props => (
+
   <tr>
     <td>{props.answers.author}</td>
     <td>{props.answers.text}</td>
     <td>{props.answers.rating}</td>
     <td><h6>1</h6></td>
-    <td><button id="upvote">Upvote</button></td>
+    <td><button  id="upvote">Upvote</button></td>
     <td><button id="downvote">Downvote</button></td>
   </tr>
 
-    //onClick={this.increment} and decrement onClick for buttons
+//onClick={this.increment} and decrement onClick for buttons
 //function increment(){ this.setState({score: this.state.score + 1,});}
 //function decrement(){this.setState({score: this.state.score - 1,});}
 );
@@ -22,19 +24,19 @@ class QuestionLink extends Component {
   constructor(props) {
     super(props);
 
+
     this.state = {
       currentQuestion: {},
       answers: [],
       author: "",
       text: "",
       rating: 0,
-      answersToQuestion: ""
+      answersToQuestion: "",
     };
     this.handleAuthorChange = this.handleAuthorChange.bind(this);
     this.handleTextChange = this.handleTextChange.bind(this);
     this.handleRating = this.handleRating.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
-
   }
   handleAuthorChange(e) {
     this.setState({ author: e.target.value });
@@ -43,8 +45,7 @@ class QuestionLink extends Component {
     this.setState({ text: e.target.value });
   }
   handleRating(e) {
-    this.setState({ rating: e.target.value,
-      upvote : e.target.upvote });
+    this.setState({ rating: e.target.value});
   }
 
   onSubmit(e) {
