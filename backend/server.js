@@ -8,7 +8,7 @@ const cors = require("cors");
 const mongoose = require("mongoose");
 const questionRoutes = express.Router();
 const answerRoutes = express.Router(); /*we create an instance of the Express Router by adding this code*/
-const PORT = 4000;
+const PORT = (process.env.PORT || 4000 );
 
 let Qs = require("./question.model");
 let answer = require("./answer.model");
