@@ -12,9 +12,9 @@ backend/node_modules
 /coverage
 
 # production
-/build
+/client/build
 
-# misc
+# miscnpm
 .DS_Store
 .env.local
 .env.development.local

@@ -15,6 +15,11 @@ let answer = require("./answer.model");
 
 app.use(cors());
 app.use(bodyParser.json());
+app.use(express.static('../client/build'));
+
+app.get('api/questions', (req, res) => {
+  db.get().then(questions => res.json(questions))
+});
 
 mongoose.connect("mongodb+srv://dezheaaa:test1234@clusterstackoverflow-uuz7k.azure.mongodb.net/test?retryWrites=true&w=majority", {
   useNewUrlParser: true
@@ -107,6 +112,8 @@ answerRoutes.route("/addAnswers").post(function(req, res) {
 });
 
 app.use("/questions", questionRoutes);
+
+
 
 app.use("/answers", answerRoutes);
 app.listen(PORT, function() {
