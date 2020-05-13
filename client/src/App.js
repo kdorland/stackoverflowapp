@@ -28,7 +28,7 @@ class App extends Component {
                   </Link>
                 </li>
                 <li className="navbar-item">
-                  <Link to="/Questions" className="nav-link">
+                  <Link to="/questions" className="nav-link">
                     Questions List
                   </Link>
                 </li>
@@ -40,7 +40,7 @@ class App extends Component {
           <Switch>
             <Route path="/home/" component={Home}/>
             <Route path="/post/" component={PostQuestion} />
-            <Route path="/Questions/" component={QuestionList} />
+            <Route path="/questions/" component={QuestionList} />
             <Route
               path="/Question&Answers/:id"
               render={props => <QuestionLink {...props} />}
