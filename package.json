@@ -25,7 +25,9 @@
     "build": "cd client && npm run build",
     "test": "cd client && npm test",
     "preinstall": "cd backend && npm install",
-    "install": "cd client && npm install"
+    "install": "cd client && npm install",
+    "heroku-prebuild": "npm run build",
+    "heroku-postbuild": "npm run start"
   },
   "eslintConfig": {
     "extends": "react-app"
