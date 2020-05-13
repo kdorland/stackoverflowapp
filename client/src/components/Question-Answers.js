@@ -57,7 +57,7 @@ class QuestionLink extends Component {
     };
 
     axios
-      .post("http://localhost:4000/answers/addAnswers/", newAnswers)
+      .post("http://localhost:8080/answers/addAnswers/", newAnswers)
       .then(res => console.log(res.data));
 
     this.setState({
@@ -71,7 +71,7 @@ class QuestionLink extends Component {
     this.setState({
       answersToQuestion: this.props.match.params.id
     });
-    axios.get("http://localhost:4000/questions/").then(response => {
+    axios.get("http://localhost:8080/questions/").then(response => {
       this.setState({
         currentQuestion: response.data.find(
           elm => elm._id === this.props.match.params.id
@@ -80,7 +80,7 @@ class QuestionLink extends Component {
     });
 
     axios
-      .get("http://localhost:4000/answers/")
+      .get("http://localhost:8080/answers/")
       .then(response => {
         this.setState({ answers: response.data });
       })

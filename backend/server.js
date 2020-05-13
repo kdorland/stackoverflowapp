@@ -1,25 +1,25 @@
 /* We’re creating an Express server, attaching the cors and body-parser middleware and 
-making the server listening on port 4000. With the MongoDB database server running we’re now ready to
- connect to MongoDB from our server program by using the Mongoose library*/
+making the server listening on port 8080. With the MongoDB database server running we’re now ready to
+connect to MongoDB from our server program by using the Mongoose library*/
+
 const express = require("express");
 const app = express();
 const bodyParser = require("body-parser");
 const cors = require("cors");
 const mongoose = require("mongoose");
+
 const questionRoutes = express.Router();
 const answerRoutes = express.Router(); /*we create an instance of the Express Router by adding this code*/
-const PORT = (process.env.PORT || 4000 );
+const PORT = (process.env.PORT || 8080 );
 
-let Qs = require("./question.model");
+
 let answer = require("./answer.model");
+let Qs = require("./question.model");
 
 app.use(cors());
 app.use(bodyParser.json());
 app.use(express.static('../client/build'));
 
-app.get('api/questions', (req, res) => {
-  db.get().then(questions => res.json(questions))
-});
 
 mongoose.connect("mongodb+srv://dezheaaa:test1234@clusterstackoverflow-uuz7k.azure.mongodb.net/test?retryWrites=true&w=majority", {
   useNewUrlParser: true
@@ -36,6 +36,7 @@ list of all questions items from the MongoDB database. Again the call of the fin
 one argument: a callback function which is executed once the result is available. Here we’re making 
 sure that the results (available in questions) are added in JSON format to the response body by calling 
 res.json(questions).*/
+
 questionRoutes.route("/").get(function(req, res) {
   Qs.find(function(err, questions) {
     if (err) {

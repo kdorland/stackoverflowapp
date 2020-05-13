@@ -14,14 +14,15 @@ const Question = props => (
 );
 
 class QuestionList extends Component {
-  constructor(props) {
+    API_URL = process.env.REACT_APP_API_URL;
+    constructor(props) {
     super(props);
     this.state = { questions: [] };
   }
 
   componentDidMount() {
     axios
-      .get("http://localhost:4000/questions/")
+      .get("http://localhost:8080/questions/")
       .then(response => {
         this.setState({ questions: response.data });
       })

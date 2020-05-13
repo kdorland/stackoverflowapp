@@ -62,7 +62,7 @@ class PostQuestion extends Component {
 
 
     axios
-      .post("http://localhost:4000/questions/add", newQuestion)
+      .post("http://localhost:8080/questions/add", newQuestion)
       .then(res => console.log(res.data));
 
     this.setState({
