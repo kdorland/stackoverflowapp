@@ -22,10 +22,12 @@
   "scripts": {
     "start": "cd backend && node server.js",
     "dev": "cd client && npm start",
+    "poststart": "cd client && npm start",
     "build": "cd client && npm run build",
     "test": "cd client && npm test",
     "preinstall": "cd backend && npm install",
-    "install": "cd client && npm install"
+    "install": "cd client && npm install",
+    "heroku-postbuild": "npm run build"
   },
   "eslintConfig": {
     "extends": "react-app"
