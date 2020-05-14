@@ -9,6 +9,8 @@ class PostQuestion extends Component {
   constructor(props) {
     super(props);
 
+    API_URL = process.env.REACT_APP_API_URL;
+
     this.state = {
       author_name: "",
       question_title: "",
@@ -16,7 +18,7 @@ class PostQuestion extends Component {
       // question_completed: false
     };
 
-    /* Because in the three implemented methods we’re dealing with the component’s 
+    /* Because in the three implemented methods we’re dealing with the component’s
         state object we need to make sure to bind those methods to (this)  */
 
     this.onChangeAuthorName = this.onChangeAuthorName.bind(this);
@@ -43,7 +45,7 @@ class PostQuestion extends Component {
     });
   }
 
-  /*This method is needed to handle the submit event of the form 
+  /*This method is needed to handle the submit event of the form
        which will be implemented to create a new questions*/
 
   onSubmit(event) {
@@ -62,8 +64,8 @@ class PostQuestion extends Component {
 
 
     axios
-      .post("http://localhost:8080/questions/add", newQuestion)
-      .then(res => console.log(res.data));
+        .post(`${API_URL}/questions/add`, newQuestion)
+        .then(res => console.log(res.data));
 
     this.setState({
       author_name: "",
@@ -73,53 +75,53 @@ class PostQuestion extends Component {
   }
   render() {
     return (
-  <div className="container">
-    <br></br>
-    <h3 class="h3" align="center">Stackoverflow</h3>
-    <p className="slogan" align="center">This is an exmaple of a clone for the popular website Stackoverflow. Please ask your question down below:</p>
+        <div className="container">
+          <br></br>
+          <h3 class="h3" align="center">Stackoverflow</h3>
+          <p className="slogan" align="center">This is an exmaple of a clone for the popular website Stackoverflow. Please ask your question down below:</p>
 
 
-        <div className="form-group">
-          <label>What is your name: </label>
-          <input
-            type="text"
-            className="form-control"
-            value={this.state.author_name}
-            onChange={this.onChangeAuthorName}
-          />
-        </div>
-        <div className="form-group">
-          <label>What is the topic about:</label>
-          <input
-            type="text"
-            className="form-control"
-            value={this.state.question_title}
-            onChange={this.onChangeQuestionTitle}
-          />
-        </div>
-        <form onSubmit={this.onSubmit}>
           <div className="form-group">
-            <label>Ask Question: </label>
-            <textarea
-              text="textarea"
-              className="form-control"
-              value={this.state.question_input}
-              onChange={this.onChangeQuestionInput}
-            />
-          </div>
-          <div className="form-group">
+            <label>What is your name: </label>
             <input
-              type="submit"
-              value="Submit Question"
-              className="btn btn-primary"
+                type="text"
+                className="form-control"
+                value={this.state.author_name}
+                onChange={this.onChangeAuthorName}
             />
           </div>
-        </form>
-        <h3 class="h3" align="center" >Questions are everywhere, answers are on StackOverflow</h3>
-        <img className="answer"
-             src="https://res.cloudinary.com/dedpxe9qh/image/upload/v1587371957/Screenshot_2020-04-20_at_10.39.04_lykm2m.png"
-             alt="answer" border="0"/>
-      </div>
+          <div className="form-group">
+            <label>What is the topic about:</label>
+            <input
+                type="text"
+                className="form-control"
+                value={this.state.question_title}
+                onChange={this.onChangeQuestionTitle}
+            />
+          </div>
+          <form onSubmit={this.onSubmit}>
+            <div className="form-group">
+              <label>Ask Question: </label>
+              <textarea
+                  text="textarea"
+                  className="form-control"
+                  value={this.state.question_input}
+                  onChange={this.onChangeQuestionInput}
+              />
+            </div>
+            <div className="form-group">
+              <input
+                  type="submit"
+                  value="Submit Question"
+                  className="btn btn-primary"
+              />
+            </div>
+          </form>
+          <h3 class="h3" align="center" >Questions are everywhere, answers are on StackOverflow</h3>
+          <img className="answer"
+               src="https://res.cloudinary.com/dedpxe9qh/image/upload/v1587371957/Screenshot_2020-04-20_at_10.39.04_lykm2m.png"
+               alt="answer" border="0"/>
+        </div>
 
     );
   }
