@@ -22,7 +22,7 @@ class QuestionList extends Component {
 
     componentDidMount() {
         axios
-            .get(`${API_URL}/questions/`)
+            .get(`${this.API_URL}/questions/`)
             .then(response => {
                 this.setState({ questions: response.data });
             })
